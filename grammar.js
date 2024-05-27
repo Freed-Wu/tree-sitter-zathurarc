@@ -53,7 +53,7 @@ module.exports = grammar({
         optional($.mode),
         $.key,
         alias(/[a-z_]+/, $.function),
-        optional(seq($._space, alias(/[a-z_]+/, $.argument)))
+        optional(seq($._space, alias(/[a-z_-]+/, $.argument)))
       ),
 
     key: ($) =>
