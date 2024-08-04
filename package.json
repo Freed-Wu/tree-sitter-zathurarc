@@ -1,6 +1,6 @@
 {
   "name": "tree-sitter-zathurarc",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Zathurarc grammar for tree-sitter",
   "repository": "github:tree-sitter/tree-sitter-zathurarc",
   "license": "MIT",
