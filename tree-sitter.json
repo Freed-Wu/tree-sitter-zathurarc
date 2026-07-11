@@ -1,0 +1,42 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "zathurarc",
+      "camelcase": "Zathurarc",
+      "title": "Zathurarc",
+      "scope": "source.zathurarc",
+      "file-types": [
+        "zathurarc"
+      ],
+      "injection-regex": "^zathurarc$",
+      "class-name": "TreeSitterZathurarc"
+    }
+  ],
+  "metadata": {
+    "version": "0.0.9",
+    "license": "MIT",
+    "description": "🌲👨 zathurarc grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "Wu",
+        "email": "wuzhenyu@ustc.edu",
+        "url": "https://github.com/Freed-Wu"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/Freed-Wu/tree-sitter-zathurarc",
+      "funding": "https://github.com/Freed-Wu/tree-sitter-zathurarc"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "java": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": true
+  }
+}
