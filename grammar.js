@@ -6,7 +6,7 @@ module.exports = grammar({
   extras: $ => [/\s/, /\\\r?\n/, $.comment, /\\( |\t|\v|\f)/],
 
   rules: {
-    file: $ => $._statements,
+    file: $ => optional($._statements),
 
     _statements: $ => seq(
       repeat(seq(
