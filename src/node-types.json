@@ -5,6 +5,12 @@
     "fields": {}
   },
   {
+    "type": "comment",
+    "named": true,
+    "extra": true,
+    "fields": {}
+  },
+  {
     "type": "file",
     "named": true,
     "root": true,
@@ -13,10 +19,6 @@
       "multiple": true,
       "required": false,
       "types": [
-        {
-          "type": "comment",
-          "named": true
-        },
         {
           "type": "include_directive",
           "named": true
@@ -127,16 +129,6 @@
     }
   },
   {
-    "type": "mode_name",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "path",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "set_directive",
     "named": true,
     "fields": {},
@@ -204,6 +196,10 @@
     "named": false
   },
   {
+    "type": "#",
+    "named": false
+  },
+  {
     "type": "'",
     "named": false
   },
@@ -236,10 +232,6 @@
     "named": true
   },
   {
-    "type": "comment",
-    "named": true
-  },
-  {
     "type": "false",
     "named": false
   },
@@ -252,7 +244,15 @@
     "named": true
   },
   {
+    "type": "mode_name",
+    "named": true
+  },
+  {
     "type": "option",
+    "named": true
+  },
+  {
+    "type": "path",
     "named": true
   },
   {

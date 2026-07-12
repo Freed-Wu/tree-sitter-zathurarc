@@ -3,30 +3,47 @@
   "name": "zathurarc",
   "rules": {
     "file": {
-      "type": "REPEAT",
-      "content": {
-        "type": "SEQ",
-        "members": [
-          {
-            "type": "CHOICE",
+      "type": "SYMBOL",
+      "name": "_statements"
+    },
+    "_statements": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
             "members": [
               {
                 "type": "SYMBOL",
-                "name": "_code"
+                "name": "_statement"
               },
               {
-                "type": "BLANK"
+                "type": "SYMBOL",
+                "name": "_terminator"
               }
             ]
-          },
-          {
-            "type": "SYMBOL",
-            "name": "_end"
           }
-        ]
-      }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_statement"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_terminator"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
     },
-    "_code": {
+    "_statement": {
       "type": "CHOICE",
       "members": [
         {
@@ -172,11 +189,8 @@
       ]
     },
     "_word": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "PATTERN",
-        "value": "(\\S|\\\\ )"
-      }
+      "type": "PATTERN",
+      "value": "([^\"'#\\s]|\\\\.)+"
     },
     "_quoted_string": {
       "type": "CHOICE",
@@ -394,8 +408,8 @@
         {
           "type": "ALIAS",
           "content": {
-            "type": "SYMBOL",
-            "name": "_word"
+            "type": "PATTERN",
+            "value": "[^]]+"
           },
           "named": true,
           "value": "mode_name"
@@ -407,12 +421,21 @@
       ]
     },
     "comment": {
-      "type": "PATTERN",
-      "value": "#[^\\n]*"
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "#"
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\\n]*"
+        }
+      ]
     },
-    "_eol": {
+    "_terminator": {
       "type": "PATTERN",
-      "value": "\\r?\\n"
+      "value": "\\n"
     },
     "_space": {
       "type": "PREC",
@@ -424,52 +447,27 @@
           "value": "[ \\t]"
         }
       }
-    },
-    "_end": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "_space"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SYMBOL",
-              "name": "comment"
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
-        },
-        {
-          "type": "SYMBOL",
-          "name": "_eol"
-        }
-      ]
     }
   },
   "extras": [
     {
       "type": "PATTERN",
-      "value": " "
+      "value": "\\s"
+    },
+    {
+      "type": "PATTERN",
+      "value": "\\\\\\r?\\n"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "comment"
+    },
+    {
+      "type": "PATTERN",
+      "value": "\\\\( |\\t|\\v|\\f)"
     }
   ],
-  "conflicts": [
-    [
-      "map_directive"
-    ]
-  ],
+  "conflicts": [],
   "precedences": [],
   "externals": [],
   "inline": [],

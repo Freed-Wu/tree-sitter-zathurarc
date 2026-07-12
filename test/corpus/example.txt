@@ -1,22 +1,47 @@
 =======
-Example
+Include
 =======
-
-# test
 include desktop/zathurarc
-map [normal] <Esc> zoom in#with argument
-map <F1> recolor          #without argument
+
+---
+(file
+  (include_directive
+    (command)
+    (path)))
+
+=======
+Set
+=======
 set recolor false
-unmap <F1>
+
+---
+(file
+  (set_directive
+    (command)
+    (option)
+    (bool)))
+
+=======
+Unmap
+=======
 unmap [normal] <Esc>
 
 ---
-
 (file
-  (comment)
-  (include_directive
+  (unmap_directive
     (command)
-    (path))
+    (mode
+      (mode_name))
+    (key
+      (key_name))))
+
+=======
+Map
+=======
+map [normal] <Esc> zoom in#with argument
+
+---
+(file
   (map_directive
     (command)
     (mode
@@ -25,24 +50,4 @@ unmap [normal] <Esc>
       (key_name))
     (function)
     (argument))
-  (comment)
-  (map_directive
-    (command)
-    (key
-      (key_name))
-    (function))
-  (comment)
-  (set_directive
-    (command)
-    (option)
-    (bool))
-  (unmap_directive
-    (command)
-    (key
-      (key_name)))
-  (unmap_directive
-    (command)
-    (mode
-      (mode_name))
-    (key
-      (key_name))))
+  (comment))
