@@ -85,7 +85,18 @@
   {
     "type": "map_directive",
     "named": true,
-    "fields": {},
+    "fields": {
+      "content": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "argument",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -131,7 +142,18 @@
   {
     "type": "set_directive",
     "named": true,
-    "fields": {},
+    "fields": {
+      "content": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    },
     "children": {
       "multiple": true,
       "required": true,
@@ -162,11 +184,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "string",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "unmap_directive",
@@ -253,6 +270,10 @@
   },
   {
     "type": "path",
+    "named": true
+  },
+  {
+    "type": "string",
     "named": true
   },
   {
