@@ -1,0 +1,25 @@
+=======
+exec
+=======
+map T exec "notify-send 'foo'"
+
+---
+(file
+  (map_directive
+    (command)
+    (key)
+    (function)
+    (argument)))
+
+=======
+feedkeys
+=======
+map I feedkeys :info<Return>
+
+---
+(file
+  (map_directive
+    (command)
+    (key)
+    (function)
+    (argument)))

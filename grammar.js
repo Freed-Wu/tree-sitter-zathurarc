@@ -29,7 +29,7 @@ module.exports = grammar({
       seq(
         alias("set", $.command),
         $.option,
-        choice($.int, $.float, $.string, $.bool)
+        choice($.int, $.float, $._string, $.bool)
       ),
 
     option: _ => /[a-z-]+/,
@@ -38,14 +38,20 @@ module.exports = grammar({
     int: $ => $._int,
     float: $ =>
       prec(2, choice(seq(optional($._int), ".", $._int), seq($._int, "."))),
-    string: $ => choice($._quoted_string, $._word),
     bool: _ => choice("true", "false"),
 
     _word: _ => /([^"'#\s]|\\.)+/,
-    _quoted_string: _ =>
+    _string: $ =>
       choice(
-        seq('"', field("content", repeat1(/[^"]|\\"/)), '"'),
-        seq("'", field("content", repeat1(/[^']|\\'/)), "'")
+        quoted_string("'", $.string),
+        quoted_string('"', $.string),
+        alias($._word, $.string)
+      ),
+    _argument: $ =>
+      choice(
+        quoted_string("'", $.argument),
+        quoted_string('"', $.argument),
+        alias($._word, $.argument)
       ),
 
     include_directive: $ =>
@@ -60,7 +66,7 @@ module.exports = grammar({
         optional($.mode),
         $.key,
         alias(/[a-z_]+/, $.function),
-        optional(seq($._space, alias(/[a-z_-]+/, $.argument)))
+        optional($._argument)
       ),
 
     key: $ =>
@@ -69,6 +75,16 @@ module.exports = grammar({
 
     comment: _ => seq('#', /[^\n]*/),
     _terminator: _ => /\n/,
-    _space: _ => prec(-1, repeat1(/[ \t]/)),
   },
 });
+
+function quoted_string(char, name) {
+  return seq(
+    char,
+    alias(
+      field("content", new RegExp("([^" + char + "]|\\\\" + char + ")*")),
+      name
+    ),
+    char
+  );
+}

@@ -7,3 +7,9 @@
 
 ((comment) @injection.content
   (#set! injection.language "comment"))
+
+(map_directive
+  (function) @_function
+  (argument) @injection.content
+  (#eq? @_function "exec")
+  (#set! injection.language "bash"))
