@@ -43,6 +43,7 @@ jobs:
           branch: release
           commit_message: 'chore: update generated artifacts'
           file_pattern: src
+          add_options: -f
 
   deploy-npm:
     runs-on: ubuntu-latest
