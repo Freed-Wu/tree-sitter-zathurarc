@@ -33,7 +33,7 @@ jobs:
         with:
           ref: release
           path: release
-      - name: Test
+      - name: Release
         run: |
           rm -rf release/src
           cp -r src release
