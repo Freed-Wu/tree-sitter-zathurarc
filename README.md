@@ -40,44 +40,10 @@
 
 [![Crates.io (recent)](https://img.shields.io/crates/dr/tree-sitter-zathurarc)](https://crates.io/crates/tree-sitter-zathurarc)
 
+[![luarocks](https://img.shields.io/luarocks/v/Freed-Wu/tree-sitter-zathurarc)](https://luarocks.org/modules/Freed-Wu/tree-sitter-zathurarc)
+
 [zathurarc](https://pwmt.org/projects/zathura/documentation/) grammar for
 [tree-sitter](https://github.com/tree-sitter/tree-sitter).
 
-It can be used by:
-
-- Syntax highlight
-  - editors
-    - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): for
-      [neovim](https://github.com/neovim/neovim)
-    - [tree-sitter-langs](https://github.com/emacs-tree-sitter/tree-sitter-langs):
-      for [emacs](https://www.gnu.org/software/emacs/)
-    - [kak-tree-sitter](https://github.com/phaazon/kak-tree-sitter): for
-      [kakoune](https://kakoune.org/)
-    - [helix](https://helix-editor.com/)
-    - [zed](https://zed.dev)
-    - [atom](https://github.com/atom/atom)
-    - [syntax-highlighter](https://github.com/EvgeniyPeshkov/syntax-highlighter):
-      for [VS Code](https://github.com/microsoft/vscode)
-  - pagers
-    - [syncat](https://github.com/foxfriends/syncat)
-    - [`tree-sitter highlight`](https://tree-sitter.github.io/tree-sitter/syntax-highlighting):
-      Make sure `/the/parent/directory/of/this/repo` in `parser-directories` of
-      your `~/.config/tree-sitter/config.json`
-- Language servers
-  - [zathura-language-server](https://github.com/Freed-Wu/zathura-language-server)
-  - [vscode-anycode](https://github.com/microsoft/vscode-anycode)
-  - [Navigating code on GitHub](https://docs.github.com/en/repositories/working-with-files/using-files/navigating-code-on-github):
-    supported by [semantic](https://github.com/github/semantic)
-- Libraries
-  - [tree-sitter-zathurarc](https://www.npmjs.com/package/tree-sitter-zathurarc):
-    for node
-  - [tree-sitter-zathurarc](https://crates.io/crates/tree-sitter-zathurarc):
-    for rust
-  - [tree-sitter-zathurarc](https://pypi.org/project/tree-sitter-zathurarc):
-    for python
-  - [tree-sitter-languages](https://github.com/grantjenks/py-tree-sitter-languages):
-    for python
-
-## Related Projects
-
-- [zathurarc.vim](https://github.com/Freed-Wu/zathurarc.vim): vim syntax
+If you don't want to install nodejs to generate `src/grammar.json`,
+use [release](https://github.com/Freed-Wu/tree-sitter-tmuxf/tree/release).
