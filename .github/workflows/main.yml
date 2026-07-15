@@ -29,9 +29,17 @@ jobs:
       - name: Test
         run: |
           tree-sitter test
-          rm .gitignore
+      - uses: actions/checkout@v4
+        with:
+          ref: release
+          path: release
+      - name: Test
+        run: |
+          rm -rf release/src
+          cp -r src release
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
+          repository: release
           branch: release
           commit_message: 'chore: update generated artifacts'
           file_pattern: src
