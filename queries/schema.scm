@@ -2,7 +2,19 @@
 
 (set_directive
   (option) @--option
-  (_) @set.-option)
+  (string) @set.-option)
+
+(set_directive
+  (option) @--option
+  (int) @set.-option.--integer)
+
+(set_directive
+  (option) @--option
+  (float) @set.-option.--number)
+
+(set_directive
+  (option) @--option
+  (bool) @set.-option.--boolean)
 
 (map_directive
   (#set! mode "normal")
