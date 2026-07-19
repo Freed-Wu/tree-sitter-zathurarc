@@ -156,7 +156,7 @@ jobs:
       - run: |
           luarocks install tree-sitter-zathurarc
           luarocks pack tree-sitter-zathurarc
-          scripts/update.sh ./*.rock
+          scripts/upload.sh ./*.rock
         env:
           LUAROCKS_API_KEY: ${{secrets.LUAROCKS_API_KEY}}
 
