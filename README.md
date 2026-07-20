@@ -45,10 +45,11 @@
 [zathurarc](https://pwmt.org/projects/zathura/documentation/) grammar for
 [tree-sitter](https://github.com/tree-sitter/tree-sitter).
 
-Created for:
+Created for [zathura-language-server](https://github.com/Freed-Wu/zathura-language-server).
 
-- [zathura-language-server](https://github.com/Freed-Wu/zathura-language-server)
-- NeoVim:
+## Usage
+
+### [rocks.nvim](https://github.com/lumen-oss/rocks.nvim)
 
 ```toml
 [plugins]
@@ -56,5 +57,6 @@ Created for:
 tree-sitter-zathurarc = "VERSION"
 ```
 
-If you don't want to install nodejs to generate `src/grammar.json`,
-use branch [main](https://github.com/Freed-Wu/tree-sitter-zathurarc/tree/main).
+### [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+
+Use branch [main](https://github.com/Freed-Wu/tree-sitter-zathurarc/tree/main).
