@@ -17,7 +17,7 @@
   (bool) @set.-option.--boolean)
 
 (map_directive
-  (#set! mode "normal")
+  (#set! --mode normal)
   (mode
     (mode_name) @--mode)?
   (key) @map.-mode.-.key
@@ -25,7 +25,7 @@
   (argument)? @map.-mode.-.argument)
 
 (unmap_directive
-  (#set! mode "normal")
+  (#set! --mode normal)
   (mode
     (mode_name) @--mode)?
   (key) @unmap.-mode.-)
