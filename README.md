@@ -46,4 +46,4 @@
 [tree-sitter](https://github.com/tree-sitter/tree-sitter).
 
 If you don't want to install nodejs to generate `src/grammar.json`,
-use [release](https://github.com/Freed-Wu/tree-sitter-tmuxf/tree/release).
+use [release](https://github.com/Freed-Wu/tree-sitter-zathurarc/tree/release).
