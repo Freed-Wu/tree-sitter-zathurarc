@@ -5,7 +5,8 @@
   (#offset! @injection.content 0 1 0 -1)
   (#set! injection.language "bash"))
 
-((comment_body) @injection.content
+(comment
+  (body) @injection.content
   (#set! injection.language "comment"))
 
 (map_directive

@@ -17,7 +17,10 @@
 (argument) @variable.parameter
 
 ; Comments
-(comment) @comment @spell
+(comment) @comment
+
+(comment
+  (body) @spell)
 
 ; Literals
 (int) @number
