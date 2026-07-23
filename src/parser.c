@@ -92,7 +92,7 @@ static const char * const ts_symbol_names[] = {
   [aux_sym_mode_token1] = "mode_name",
   [anon_sym_RBRACK] = "]",
   [anon_sym_POUND] = "#",
-  [aux_sym_comment_token1] = "comment_token1",
+  [aux_sym_comment_token1] = "body",
   [sym__terminator] = "_terminator",
   [sym_file] = "file",
   [sym__statements] = "_statements",
@@ -264,8 +264,8 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .named = false,
   },
   [aux_sym_comment_token1] = {
-    .visible = false,
-    .named = false,
+    .visible = true,
+    .named = true,
   },
   [sym__terminator] = {
     .visible = false,
@@ -2176,7 +2176,7 @@ TS_PUBLIC const TSLanguage *tree_sitter_zathurarc(void) {
     .metadata = {
       .major_version = 0,
       .minor_version = 1,
-      .patch_version = 2,
+      .patch_version = 3,
     },
   };
   return &language;
