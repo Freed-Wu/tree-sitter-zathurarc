@@ -1,1 +1,2 @@
-(comment) @comment.outer
+(comment
+  (comment_body) @comment.inner) @comment.outer
