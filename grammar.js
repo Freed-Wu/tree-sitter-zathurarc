@@ -73,7 +73,7 @@ module.exports = grammar({
       choice(seq("<", alias(/[A-Z][a-zA-Z0-9-]+/, $.key_name), ">"), /\S/, /[^ \n\[\]<>]+/),
     mode: $ => seq("[", alias(/[^]]+/, $.mode_name), "]"),
 
-    comment: $ => seq('#', alias(/[^\n]*/, $.body)),
+    comment: $ => seq('#', /\s*/, alias(/[^\n]*/, $.body)),
     _terminator: _ => /\n/,
   },
 });
