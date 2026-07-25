@@ -2199,7 +2199,7 @@ TS_PUBLIC const TSLanguage *tree_sitter_zathurarc(void) {
     .metadata = {
       .major_version = 0,
       .minor_version = 1,
-      .patch_version = 4,
+      .patch_version = 7,
     },
   };
   return &language;
