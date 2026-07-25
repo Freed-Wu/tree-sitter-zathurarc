@@ -34,6 +34,12 @@ module.exports = grammar({
 
     option: _ => /[a-z-]+/,
 
+    _int: _ => /\d+/,
+    int: $ => $._int,
+    float: $ =>
+      prec(2, choice(seq(optional($._int), ".", $._int), seq($._int, "."))),
+    bool: _ => choice("true", "false"),
+
     _word: _ => /([^"'#\s]|\\.)+/,
     _string: $ =>
       choice(
@@ -47,12 +53,6 @@ module.exports = grammar({
         quoted_string('"', $.argument),
         alias($._word, $.argument)
       ),
-
-    _int: _ => /\d+/,
-    int: $ => $._int,
-    float: $ =>
-      prec(2, choice(seq(optional($._int), ".", $._int), seq($._int, "."))),
-    bool: _ => choice("true", "false"),
 
     include_directive: $ =>
       seq(alias("include", $.command), alias($._word, $.path)),
